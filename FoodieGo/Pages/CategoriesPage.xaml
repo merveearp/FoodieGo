@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodieGo.Pages.CategoriesPage"
+             Title="Kategoriler">
+
+    <!-- Ana kapsayıcı: 5 satırlı Grid -->
+    <Grid RowSpacing="0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="160" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="80" />
+        </Grid.RowDefinitions>
+
+        <!-- 1. ÜST ADRES ALANI (açık yeşil) -->
+        <Border Grid.Row="0"
+        BackgroundColor="#C8E6C9"
+        Stroke="Transparent">
+
+            <!-- İçeriyi 3 sütuna bölüyoruz: ikon | yazı | ikon -->
+            <Grid ColumnDefinitions="Auto, *, Auto"
+          Padding="16,0"
+          VerticalOptions="Center">
+
+                <!-- Sol: konum ikonu (emoji) -->
+                <Label Grid.Column="0"
+               Text="📍"
+               FontSize="22"
+               VerticalOptions="Center" />
+
+                <!-- Orta: adres yazısı -->
+                <Label Grid.Column="1"
+               Text="Sultanahmet, İstanbul"
+               FontSize="18"
+               FontAttributes="Bold"
+               VerticalOptions="Center"
+               HorizontalOptions="Start"
+               Margin="8,0,0,0" />
+
+                <!-- Sağ: bildirim ikonu (emoji) -->
+                <Label Grid.Column="2"
+               Text="🔔"
+               FontSize="22"
+               VerticalOptions="Center" />
+
+            </Grid>
+
+        </Border>
+
+
+
+        <!-- 2. BAŞLIK VE ARAMA ALANI (açık mavi) -->
+        <Border Grid.Row="1"
+                BackgroundColor="#BBDEFB"
+                Stroke="Transparent">
+            <Label Text="2 - Başlık ve Arama Alanı"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="16" />
+        </Border>
+
+        <!-- 3. KATEGORİ FİLTRE ALANI (açık sarı) -->
+        <Border Grid.Row="2"
+                BackgroundColor="#FFF9C4"
+                Stroke="Transparent">
+            <Label Text="3 - Kategori Filtre Alanı"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="16" />
+        </Border>
+
+        <!-- 4. KATEGORİ KARTLARI ALANI (açık pembe) - kalan alan -->
+        <Border Grid.Row="3"
+                BackgroundColor="#F8BBD0"
+                Stroke="Transparent">
+            <Label Text="4 - Kategori Kartları Alanı"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="16" />
+        </Border>
+
+        <!-- 5. ALT NAVİGASYON ALANI (açık mor) -->
+        <Border Grid.Row="4"
+                BackgroundColor="#E1BEE7"
+                Stroke="Transparent">
+            <Label Text="5 - Alt Navigasyon"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="16" />
+        </Border>
+
+    </Grid>
+
+</ContentPage>
+
