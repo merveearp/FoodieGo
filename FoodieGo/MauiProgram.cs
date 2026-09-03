@@ -13,6 +13,9 @@ namespace FoodieGo
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("MaterialSymbolsOutlined-Regular.ttf", "MaterialSymbols");
+                    fonts.AddFont("Inter-Regular.ttf", "Inter");
+                    fonts.AddFont("Inter-Bold.ttf", "InterBold");
                 });
 
 #if DEBUG
