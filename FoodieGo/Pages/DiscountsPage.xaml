@@ -1,12 +1,132 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:FoodieGo.Helpers"
              x:Class="FoodieGo.Pages.DiscountsPage"
-             Title="DiscountsPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#F8F9FF"
+             Title="İndirimler">
+
+    <Grid RowDefinitions="*, Auto">
+
+        <!-- KAYDIRILABİLİR İÇERİK -->
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout Spacing="16" Padding="16,16,16,24">
+
+                <!-- SAYFA BAŞLIĞI -->
+                <VerticalStackLayout Spacing="2" Margin="0,0,0,4">
+                    <Label Text="İndirimler" FontFamily="InterBold" FontSize="28" TextColor="#121C2A" />
+                    <Label Text="Sana özel fırsatları kaçırma" FontFamily="Inter" FontSize="15" TextColor="#3C4A42" />
+                </VerticalStackLayout>
+
+                <!-- ===================== BANNER 1 ===================== -->
+                <Border StrokeShape="RoundRectangle 24" Stroke="Transparent"
+                        BackgroundColor="#006C49" Padding="0" HeightRequest="130">
+                    <Grid ColumnDefinitions="120, *">
+                        <!-- Sol: indirim oranı -->
+                        <Grid Grid.Column="0" BackgroundColor="#00422B">
+                            <Label Text="%30" FontFamily="InterBold" FontSize="34" TextColor="White"
+                                   HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Grid>
+                        <!-- Sağ: başlık + açıklama + tarih -->
+                        <VerticalStackLayout Grid.Column="1" Padding="16" Spacing="4" VerticalOptions="Center">
+                            <Label Text="Haftanın Fırsatları" FontFamily="InterBold" FontSize="18" TextColor="White" />
+                            <Label Text="Seçili ürünlerde geçerli süper indirim" FontFamily="Inter" FontSize="13" TextColor="White" />
+                            <Label Text="Son gün: 30 Ağustos" FontFamily="Inter" FontSize="12" TextColor="#6FFBBE" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+
+                <!-- ===================== BANNER 2 ===================== -->
+                <Border StrokeShape="RoundRectangle 24" Stroke="Transparent"
+                        BackgroundColor="#BA1A1A" Padding="0" HeightRequest="130">
+                    <Grid ColumnDefinitions="120, *">
+                        <Grid Grid.Column="0" BackgroundColor="#93000A">
+                            <Label Text="%50" FontFamily="InterBold" FontSize="34" TextColor="White"
+                                   HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Grid>
+                        <VerticalStackLayout Grid.Column="1" Padding="16" Spacing="4" VerticalOptions="Center">
+                            <Label Text="Temizlik Ürünleri" FontFamily="InterBold" FontSize="18" TextColor="White" />
+                            <Label Text="Tüm deterjan ve temizlik ürünlerinde" FontFamily="Inter" FontSize="13" TextColor="White" />
+                            <Label Text="Son gün: 25 Ağustos" FontFamily="Inter" FontSize="12" TextColor="#FFDAD6" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+
+                <!-- ===================== BANNER 3 ===================== -->
+                <Border StrokeShape="RoundRectangle 24" Stroke="Transparent"
+                        BackgroundColor="#10B981" Padding="0" HeightRequest="130">
+                    <Grid ColumnDefinitions="120, *">
+                        <Grid Grid.Column="0" BackgroundColor="#006C49">
+                            <Label Text="%20" FontFamily="InterBold" FontSize="34" TextColor="White"
+                                   HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Grid>
+                        <VerticalStackLayout Grid.Column="1" Padding="16" Spacing="4" VerticalOptions="Center">
+                            <Label Text="Taze Meyve &amp; Sebze" FontFamily="InterBold" FontSize="18" TextColor="White" />
+                            <Label Text="Günün taze ürünlerinde indirim" FontFamily="Inter" FontSize="13" TextColor="White" />
+                            <Label Text="Son gün: 20 Ağustos" FontFamily="Inter" FontSize="12" TextColor="#EAF1FF" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+
+                <!-- ===================== BANNER 4 ===================== -->
+                <Border StrokeShape="RoundRectangle 24" Stroke="Transparent"
+                        BackgroundColor="#725C00" Padding="0" HeightRequest="130">
+                    <Grid ColumnDefinitions="120, *">
+                        <Grid Grid.Column="0" BackgroundColor="#564500">
+                            <Label Text="%15" FontFamily="InterBold" FontSize="34" TextColor="White"
+                                   HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Grid>
+                        <VerticalStackLayout Grid.Column="1" Padding="16" Spacing="4" VerticalOptions="Center">
+                            <Label Text="Kahvaltılıklar" FontFamily="InterBold" FontSize="18" TextColor="White" />
+                            <Label Text="Peynir, zeytin ve reçel çeşitlerinde" FontFamily="Inter" FontSize="13" TextColor="White" />
+                            <Label Text="Son gün: 28 Ağustos" FontFamily="Inter" FontSize="12" TextColor="#FFE07C" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+
+                <!-- ===================== BANNER 5 ===================== -->
+                <Border StrokeShape="RoundRectangle 24" Stroke="Transparent"
+                        BackgroundColor="#494BD6" Padding="0" HeightRequest="130">
+                    <Grid ColumnDefinitions="120, *">
+                        <Grid Grid.Column="0" BackgroundColor="#2F2EBE">
+                            <Label Text="%25" FontFamily="InterBold" FontSize="34" TextColor="White"
+                                   HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Grid>
+                        <VerticalStackLayout Grid.Column="1" Padding="16" Spacing="4" VerticalOptions="Center">
+                            <Label Text="İçecekler" FontFamily="InterBold" FontSize="18" TextColor="White" />
+                            <Label Text="Gazlı ve meyveli içeceklerde fırsat" FontFamily="Inter" FontSize="13" TextColor="White" />
+                            <Label Text="Son gün: 22 Ağustos" FontFamily="Inter" FontSize="12" TextColor="#E1E0FF" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- ALT NAVİGASYON (sabit) -->
+        <Border Grid.Row="1" BackgroundColor="White" Stroke="Transparent" Padding="0,8" HeightRequest="80">
+            <Grid ColumnDefinitions="*, *, *, *" VerticalOptions="Center">
+                <VerticalStackLayout Grid.Column="0" Spacing="2" HorizontalOptions="Center">
+                    <Label Text="{x:Static helpers:IconFont.Home}" FontFamily="MaterialSymbols" FontSize="24" TextColor="#3C4A42" HorizontalOptions="Center" />
+                    <Label Text="Ana Sayfa" FontFamily="Inter" FontSize="10" TextColor="#3C4A42" HorizontalOptions="Center" />
+                </VerticalStackLayout>
+                <VerticalStackLayout Grid.Column="1" Spacing="2" HorizontalOptions="Center">
+                    <Label Text="{x:Static helpers:IconFont.GridView}" FontFamily="MaterialSymbols" FontSize="24" TextColor="#3C4A42" HorizontalOptions="Center" />
+                    <Label Text="Kategoriler" FontFamily="Inter" FontSize="10" TextColor="#3C4A42" HorizontalOptions="Center" />
+                </VerticalStackLayout>
+                <VerticalStackLayout Grid.Column="2" Spacing="2" HorizontalOptions="Center">
+                    <Label Text="{x:Static helpers:IconFont.ShoppingCart}" FontFamily="MaterialSymbols" FontSize="24" TextColor="#3C4A42" HorizontalOptions="Center" />
+                    <Label Text="Sepet" FontFamily="Inter" FontSize="10" TextColor="#3C4A42" HorizontalOptions="Center" />
+                </VerticalStackLayout>
+                <VerticalStackLayout Grid.Column="3" Spacing="2" HorizontalOptions="Center">
+                    <Label Text="{x:Static helpers:IconFont.Person}" FontFamily="MaterialSymbols" FontSize="24" TextColor="#3C4A42" HorizontalOptions="Center" />
+                    <Label Text="Profil" FontFamily="Inter" FontSize="10" TextColor="#3C4A42" HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Grid>
+        </Border>
+
+    </Grid>
+
 </ContentPage>
+
