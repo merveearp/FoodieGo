@@ -23,6 +23,7 @@ namespace FoodieGo.Models
         public string EndDate { get; set; }     // "30 Ağustos" (şimdilik metin)
 
         public string Color { get; set; }       // "#006C49" (banner arka plan rengi)
+        public string Image { get; set; }       // Image
 
     }
 }
